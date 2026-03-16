@@ -1,22 +1,25 @@
 ---
-name: hell workflow
+name: hello workflow
+
 # runs on a trigger
 on:
   push:
     branches:
       - main
+
 jobs:
   greet:
-  # This is github runner
+    # This is github runner
     runs-on: ubuntu-latest
     steps:
       - name: say hello to users
         run: echo "Hello Doato"
+
       - name: say hello to user
         run: echo "Hello $USER"
-    
-details:
-  runs-on: ubuntu-latest
-  steps:
-    - name: show what is the version of python, docker, etc
-      run: docker --version && python --version
+
+  details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show what is the version of python, docker, etc
+        run: docker --version && python --version
